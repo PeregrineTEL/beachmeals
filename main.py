@@ -1,12 +1,12 @@
-from random import *
+import random
 
 friends = []
 i = 0
 
 print "how many friends "
-number = raw_input("> ")
+howmany = int(raw_input("> "))
 
-while i < number:
+while i < howmany:
 	print "who is the friend "
 	friend = raw_input("> ")
 	friends.append(friend)
@@ -20,3 +20,4 @@ brunch = []
 snax = []
 dinner = []
 breakfast = []
+
