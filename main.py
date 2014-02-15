@@ -1,11 +1,10 @@
 import random
 
 friends = []
-i = 0
-
 print "how many friends "
 howmany = int(raw_input("> "))
 
+i = 0
 while i < howmany:
 	print "who is the friend "
 	friend = raw_input("> ")
@@ -17,23 +16,22 @@ print "here's all the friends: "
 print friends
 friendListSize = len(friends)
 print "there are %s friends" % friendListSize
-#so now all the friends are in.  this can probably be shortened
-#NOW I want to lump them all into meal assignments
 
-newIndex = friendListSize
-friendForIndex = []
-friendForIndex = random.shuffle(friends)
+
+friendForIndex = friends
+random.shuffle(friendForIndex)
 print friendForIndex
 friendForIndex[-1]
+
 brunch = []
 snax = []
 dinner = []
 breakfast = []
 
-
+newIndex = friendListSize
 while newIndex > 0:
 
-	friendForIndex[-1]
+	appender = friendForIndex[-1]
 	brunch.append(appender)
 	print "adding guy above to brunch"
 	list.pop(friendForIndex)
