@@ -69,4 +69,4 @@ while newIndex > 0:
 print "people on brunch: %s" % brunch
 print "people on snax: %s" % snax
 print "people on dinner: %s" % dinner
-print "people on breakfast: %s" % breakfast
+print "people on breakfast: %s" % breakfast 
