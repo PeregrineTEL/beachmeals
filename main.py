@@ -32,9 +32,9 @@ meals = [brunch, snax, dinner, breakfast]
 print meals
 
 k = friendListSize
-for j in meals and while k > 0:
-	print "primary"
-	while k > 0:
-		print "should print %s times" % friendListSize
-		print "sub conditional"
-		k = k - 1
+for j in meals:
+	appender = shuffledFriends[-1]
+	j.meals(appender)
+	list.pop(shuffledFriends)
+	print meals
+	# ha ha shit this exploded
