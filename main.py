@@ -31,10 +31,19 @@ meals = [brunch, snax, dinner, breakfast]
 
 print meals
 
-k = friendListSize
-for j in meals:
-	appender = shuffledFriends[-1]
-	j.meals(appender)
-	list.pop(shuffledFriends)
-	print meals
-	# ha ha shit this exploded
+k = len(shuffledFriends)
+while k > 0:
+	for j in meals:
+		appender = shuffledFriends[-1]
+		j.append(appender)
+		list.pop(shuffledFriends)
+		k -= 1
+		if k <= 0:
+			print "brunch fixers: %s \n" % brunch
+			print "snax fixers: %s \n" % snax
+			print "dinner fixers: %s \n" % dinner
+			print "breakfast fixers: %s \n" % breakfast
+		elif k > 0:
+			pass
+		else:
+			print "error"
