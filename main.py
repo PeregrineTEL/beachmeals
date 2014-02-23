@@ -18,10 +18,7 @@ print "there are %s friends" % friendListSize
 
 shuffledFriends = friends
 random.shuffle(shuffledFriends)
-# had a print statement here that printed out the shuffledfriends
-
-# or should structure MEALS be a dict so that its keys can be called?
-# OMG PROBABLY
+print shuffledFriends
 
 brunch = []
 snax = []
@@ -29,21 +26,21 @@ dinner = []
 breakfast = []
 meals = [brunch, snax, dinner, breakfast]
 
-print meals
-
 k = len(shuffledFriends)
 while k > 0:
 	for j in meals:
 		appender = shuffledFriends[-1]
 		j.append(appender)
 		list.pop(shuffledFriends)
-		k -= 1
-		if k <= 0:
+		k = k - 1
+		if k > 0:
+			pass
+		elif k <= 0:
 			print "brunch fixers: %s \n" % brunch
 			print "snax fixers: %s \n" % snax
 			print "dinner fixers: %s \n" % dinner
 			print "breakfast fixers: %s \n" % breakfast
-		elif k > 0:
-			pass
+			print "good job now make the food you dooks"
+			exit(0)
 		else:
 			print "error"
