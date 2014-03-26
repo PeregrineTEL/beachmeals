@@ -1,4 +1,21 @@
+#Creative Commons 2014 Rachel Kelly
+#A way to assign meal preparation to randomized groups of people
+
 import random
+
+mealchoice = "y"
+while mealchoice == "y":
+	meallist = []
+	print "what meals? "
+	whichmeal = raw_input("> ")
+    newmealname = "["+whichmeal+"]" #ok that doesn't work
+    print newmealname
+    meallist.append(newmealname)
+	print "add another? y/n "
+	mealchoice = raw_input("> ")
+	if mealchoice == n:
+		break
+
 
 friends = []
 print "how many friends "
@@ -9,7 +26,6 @@ while i < howmany:
 	print "who is the friend "
 	friend = raw_input("> ")
 	friends.append(friend)
-	print friends
 	i = i + 1
 
 print "here's all the friends: "
@@ -17,56 +33,31 @@ print friends
 friendListSize = len(friends)
 print "there are %s friends" % friendListSize
 
-
-friendForIndex = friends
-random.shuffle(friendForIndex)
-print friendForIndex
-friendForIndex[-1]
+shuffledFriends = friends
+random.shuffle(shuffledFriends)
+print shuffledFriends
 
 brunch = []
 snax = []
 dinner = []
 breakfast = []
+meals = [brunch, snax, dinner, breakfast]
 
-newIndex = friendListSize
-while newIndex > 0:
-
-	appender = friendForIndex[-1]
-	brunch.append(appender)
-	print "adding guy above to brunch"
-	list.pop(friendForIndex)
-	newIndex = newIndex - 1
-	print "brunch folxxx: %s" % brunch
-
-# now the question becomes, can I use the same variable if I just redefine it a bunch
-# actually I think the question is will it keep looping the if var below?
-# I don't think it will.
-
-	if newIndex > 0:
-		appender = friendForIndex[-1]
-		dinner.append(appender)
-		print "adding guy above to dinner"
-		list.pop(friendForIndex)
-		newIndex = newIndex - 1
-		print "dinner folxxx: %s" % dinner
-
-	if newIndex > 0:
-		appender = friendForIndex[-1]
-		breakfast.append(appender)
-		print "adding guy above to breakfast"
-		list.pop(friendForIndex)
-		newIndex = newIndex - 1
-		print "breakfast folxxx: %s" % breakfast
-
-	if newIndex > 0:
-		appender = friendForIndex[-1]
-		snax.append(appender)
-		print "adding guy above to snack duty"
-		list.pop(friendForIndex)
-		newIndex = newIndex - 1
-		print "snaxfolxxx: %s" % snax
-
-print "people on brunch: %s" % brunch
-print "people on snax: %s" % snax
-print "people on dinner: %s" % dinner
-print "people on breakfast: %s" % breakfast 
+k = len(shuffledFriends)
+while k > 0:
+	for j in meals:
+		appender = shuffledFriends[-1]
+		j.append(appender)
+		list.pop(shuffledFriends)
+		k = k - 1
+		if k > 0:
+			pass
+		elif k <= 0:
+			print "brunch fixers: %s \n" % brunch
+			print "snax fixers: %s \n" % snax
+			print "dinner fixers: %s \n" % dinner
+			print "breakfast fixers: %s \n" % breakfast
+			print "good job now make the food you dooks"
+			exit(0)
+		else:
+			print "error"
