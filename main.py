@@ -1,21 +1,24 @@
-#Creative Commons 2014 Rachel Kelly
-#A way to assign meal preparation to randomized groups of people
+# Creative Commons 2014 Rachel Kelly
+# A way to assign meal preparation to randomized 
+# groups of people
 
 import random
 
-mealchoice = "y"
-while mealchoice == "y":
-	meallist = []
+mealchoice = 1
+meallist = []
+while mealchoice == 1:
 	print "what meals? "
 	whichmeal = raw_input("> ")
-    newmealname = "["+whichmeal+"]" #ok that doesn't work
-    print newmealname
-    meallist.append(newmealname)
+	newmealname = [whichmeal]
+	meallist.append(newmealname)
 	print "add another? y/n "
-	mealchoice = raw_input("> ")
-	if mealchoice == n:
+	qchoice = raw_input("> ")
+	if qchoice == "y":
+		mealchoice = 1
+	else:
 		break
 
+print meallist
 
 friends = []
 print "how many friends "
@@ -31,21 +34,15 @@ while i < howmany:
 print "here's all the friends: "
 print friends
 friendListSize = len(friends)
-print "there are %s friends" % friendListSize
+print "there are %s friends, here they are shuffled: " % friendListSize
 
 shuffledFriends = friends
 random.shuffle(shuffledFriends)
 print shuffledFriends
 
-brunch = []
-snax = []
-dinner = []
-breakfast = []
-meals = [brunch, snax, dinner, breakfast]
-
 k = len(shuffledFriends)
 while k > 0:
-	for j in meals:
+	for j in meallist:
 		appender = shuffledFriends[-1]
 		j.append(appender)
 		list.pop(shuffledFriends)
@@ -53,6 +50,7 @@ while k > 0:
 		if k > 0:
 			pass
 		elif k <= 0:
+			# print "%s fixers: %s \n" % (***1stmealname??***, appender)
 			print "brunch fixers: %s \n" % brunch
 			print "snax fixers: %s \n" % snax
 			print "dinner fixers: %s \n" % dinner
@@ -60,4 +58,4 @@ while k > 0:
 			print "good job now make the food you dooks"
 			exit(0)
 		else:
-			print "error"
+			break
