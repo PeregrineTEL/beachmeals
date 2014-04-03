@@ -38,24 +38,20 @@ print "there are %s friends, here they are shuffled: " % friendListSize
 
 shuffledFriends = friends
 random.shuffle(shuffledFriends)
-print shuffledFriends
+print "%s \n" % shuffledFriends
 
 k = len(shuffledFriends)
 while k > 0:
 	for j in meallist:
 		appender = shuffledFriends[-1]
 		j.append(appender)
+		mealname = str(j)
 		list.pop(shuffledFriends)
 		k = k - 1
 		if k > 0:
 			pass
 		elif k <= 0:
-			# print "%s fixers: %s \n" % (***1stmealname??***, appender)
-			print "brunch fixers: %s \n" % brunch
-			print "snax fixers: %s \n" % snax
-			print "dinner fixers: %s \n" % dinner
-			print "breakfast fixers: %s \n" % breakfast
+			for l in meallist:
+				print l
 			print "good job now make the food you dooks"
 			exit(0)
-		else:
-			break
